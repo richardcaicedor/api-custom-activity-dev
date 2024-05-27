@@ -63,7 +63,8 @@ public class DynamoMobileService {
     private HttpEntity<DynamoMobileRequest> createHttpEntity(DynamoMobileRequest request) {
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-        String dynamomobileBearerToken = vaultConfiguration.getDynamoMobileBearerToken();
+        //String dynamomobileBearerToken = vaultConfiguration.getDynamoMobileBearerToken();
+		String dynamomobileBearerToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50X2lkIjoxMzMsIm9wZXJhdG9yX2lkIjo4NCwiY2xpZW50X2lkIjoid29tLmNvbG9tYmlhLjIifQ.kT_jsuS_d9fuwTVrGVns2Xv6wPe0tFXH_PqvSEKm664";
         System.out.println("dynamomobileBearerToken VAULT: " + dynamomobileBearerToken);
         headers.set("Authorization", "Bearer " + dynamoMobileBearerToken);
         return new HttpEntity<>(request, headers);

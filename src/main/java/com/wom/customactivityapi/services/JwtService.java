@@ -65,9 +65,10 @@ public class JwtService {
 
     private Key getSignInKey() {
         System.out.println(vaultConfiguration.getSecurityJwtSecretKey());
-        String secretKey = vaultConfiguration.getSecurityJwtSecretKey();
+        //String secretKey = vaultConfiguration.getSecurityJwtSecretKey();
+		String secretKey = "0ptEOWMM9CTDID7dSbbOyuXBEXLhNeafnvrtS5KPBVrJQZ1d0dFaQe8_XvzBnxOJ-npD5yORe3S9Pt1EKeRGl1wCVVTYEPVc0L3IOpcuvFPjfpg1hw_E8wIkknyGvCq4Zu76QAwXiDi1kNafBexz2iXhEYXwk_pNusgHFCRmluBpjY9FKhj96nUwS7O-Ahjy_A3aKIcnG2I8Io-eHNWpVKVAsUvDeXB1TYZIzXtPrdmrVlwbsXdpV3adB31CaA2";
         System.out.println("securityJwtSecretKey VAULT: " + secretKey);
-        byte[] keyBytes = securityJwtSecretKey.getBytes(StandardCharsets.UTF_8);
+        byte[] keyBytes = securityJwtSecretKey.getBytes(StandardCharsets.UTF_8); 
         return Keys.hmacShaKeyFor(keyBytes);
     }
 }
