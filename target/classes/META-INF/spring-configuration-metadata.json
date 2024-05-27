@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "name": "api",
+      "type": "com.wom.customactivityapi.config.VaultConfiguration",
+      "sourceType": "com.wom.customactivityapi.config.VaultConfiguration"
+    }
+  ],
+  "properties": [
+    {
+      "name": "api.dynamo-mobile-bearer-token",
+      "type": "java.lang.String",
+      "sourceType": "com.wom.customactivityapi.config.VaultConfiguration"
+    },
+    {
+      "name": "api.password-d-b",
+      "type": "java.lang.String",
+      "sourceType": "com.wom.customactivityapi.config.VaultConfiguration"
+    },
+    {
+      "name": "api.security-jwt-secret-key",
+      "type": "java.lang.String",
+      "sourceType": "com.wom.customactivityapi.config.VaultConfiguration"
+    },
+    {
+      "name": "api.user-d-b",
+      "type": "java.lang.String",
+      "sourceType": "com.wom.customactivityapi.config.VaultConfiguration"
+    }
+  ],
+  "hints": []
+}

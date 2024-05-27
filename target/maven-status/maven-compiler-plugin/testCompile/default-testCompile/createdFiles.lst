@@ -1,0 +1,3 @@
+com\wom\customactivityapi\CustomActivityApiApplicationTests.class
+com\wom\customactivityapi\services\DynamoMobileServiceTest.class
+com\wom\customactivityapi\services\JwtServiceTest.class
