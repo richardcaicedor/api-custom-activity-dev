@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/activity")
@@ -43,7 +44,7 @@ public class ActivityController {
         }
     } 
 
-    @PostMapping("/save")
+    @PostMapping("/save", consumes = "application/jwt")
     public ResponseEntity<String> save (@RequestBody Map<String, Object> payload) {
         return new ResponseEntity<>("Save", HttpStatus.OK);
     }
