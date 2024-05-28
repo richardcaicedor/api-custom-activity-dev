@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/activity")
@@ -41,12 +42,12 @@ public class ActivityController {
             return buildResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage());
         }
     } 
-/* 
+
     @PostMapping("/validate") 
     public ResponseEntity<String> validate (@RequestBody Map<String, Object> payload) {
         return new ResponseEntity<>("Validate", HttpStatus.OK);
     }
-*/
+
     private ExecutePayload convertPayloadToExecutePayload(String payload) throws JsonProcessingException {
         Claims claims = jwtService.extractAllClaims(payload);
         ObjectMapper mapper = new ObjectMapper();
