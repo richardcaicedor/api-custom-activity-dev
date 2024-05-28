@@ -44,8 +44,8 @@ public class ActivityController {
         }
     } 
 
-    @PostMapping("/save", consumes = "application/jwt")
-    public ResponseEntity<String> save (@RequestBody Map<String, Object> payload) {
+    @PostMapping(value = "/save", consumes = "application/jwt")
+    public ResponseEntity<String> save(@RequestBody Map<String, Object> payload) {
         return new ResponseEntity<>("Save", HttpStatus.OK);
     }
 
