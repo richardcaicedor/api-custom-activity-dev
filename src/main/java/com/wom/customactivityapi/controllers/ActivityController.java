@@ -40,6 +40,11 @@ public class ActivityController {
             ex.printStackTrace();
             return buildResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage());
         }
+    } 
+	 
+	@PostMapping("/validate") 
+    public ResponseEntity<String> validate (@RequestBody Map<String, Object> payload) {
+        return new ResponseEntity<>("Validate", HttpStatus.OK);
     }
 
     private ExecutePayload convertPayloadToExecutePayload(String payload) throws JsonProcessingException {
