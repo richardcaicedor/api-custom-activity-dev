@@ -24,14 +24,12 @@ public class ActivityController {
     private final ActivityService activityService;
     private final JwtService jwtService;
 
-
-
     @Autowired
     public ActivityController(ActivityService activityService, JwtService jwtService) {
         this.activityService = activityService;
         this.jwtService = jwtService;
     }
-    @PostMapping(value ="/execute", consumes = "application/jwt")
+    @PostMapping("/execute")
     public ResponseEntity<?> execute(@RequestBody String request) {
         try {
             ExecutePayload executePayload = convertPayloadToExecutePayload(request);
@@ -44,23 +42,23 @@ public class ActivityController {
         }
     } 
 
-    @PostMapping(value = "/save", consumes = "application/jwt")
-    public ResponseEntity<String> save(@RequestBody Map<String, Object> payload) {
+    @PostMapping("/save")
+    public ResponseEntity<String> save(@RequestBody String payload) {
         return new ResponseEntity<>("Save", HttpStatus.OK);
     }
 
-    @PostMapping(value ="/publish", consumes = "application/jwt")
-    public ResponseEntity<String> publish (@RequestBody Map<String, Object> payload) {
+    @PostMapping("/publish")
+    public ResponseEntity<String> publish (@RequestBody String payload) {
         return new ResponseEntity<>("Publish", HttpStatus.OK);
     }
 
-    @PostMapping(value ="/stop", consumes = "application/jwt")
-    public ResponseEntity<String> stop (@RequestBody Map<String, Object> payload) {
+    @PostMapping("/stop")
+    public ResponseEntity<String> stop (@RequestBody String payload) {
         return new ResponseEntity<>("Stop", HttpStatus.OK);
     }
 
-    @PostMapping(value ="/validate", consumes = "application/jwt")
-    public ResponseEntity<String> validate (@RequestBody Map<String, Object> payload) {
+    @PostMapping("/validate")
+    public ResponseEntity<String> validate (@RequestBody String payload) {
         return new ResponseEntity<>("Validate", HttpStatus.OK);
     }
 
