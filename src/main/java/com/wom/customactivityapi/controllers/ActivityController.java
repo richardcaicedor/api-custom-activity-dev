@@ -42,7 +42,7 @@ public class ActivityController {
         }
     } 
 	 
-	@PostMapping("/validate") 
+    @PostMapping("/validate") 
     public ResponseEntity<String> validate (@RequestBody Map<String, Object> payload) {
         return new ResponseEntity<>("Validate", HttpStatus.OK);
     }
