@@ -31,7 +31,7 @@ public class ActivityController {
         this.activityService = activityService;
         this.jwtService = jwtService;
     }
-    @PostMapping("/execute")
+    @PostMapping(value ="/execute", consumes = "application/jwt")
     public ResponseEntity<?> execute(@RequestBody String request) {
         try {
             ExecutePayload executePayload = convertPayloadToExecutePayload(request);
@@ -49,17 +49,17 @@ public class ActivityController {
         return new ResponseEntity<>("Save", HttpStatus.OK);
     }
 
-    @PostMapping("/publish")
+    @PostMapping(value ="/publish", consumes = "application/jwt")
     public ResponseEntity<String> publish (@RequestBody Map<String, Object> payload) {
         return new ResponseEntity<>("Publish", HttpStatus.OK);
     }
 
-    @PostMapping("/stop")
+    @PostMapping(value ="/stop", consumes = "application/jwt")
     public ResponseEntity<String> stop (@RequestBody Map<String, Object> payload) {
         return new ResponseEntity<>("Stop", HttpStatus.OK);
     }
 
-    @PostMapping("/validate") 
+    @PostMapping(value ="/validate", consumes = "application/jwt")
     public ResponseEntity<String> validate (@RequestBody Map<String, Object> payload) {
         return new ResponseEntity<>("Validate", HttpStatus.OK);
     }
