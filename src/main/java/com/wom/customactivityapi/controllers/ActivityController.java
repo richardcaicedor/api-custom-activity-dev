@@ -43,6 +43,21 @@ public class ActivityController {
         }
     } 
 
+    @PostMapping("/save")
+    public ResponseEntity<String> save (@RequestBody Map<String, Object> payload) {
+        return new ResponseEntity<>("Save", HttpStatus.OK);
+    }
+
+    @PostMapping("/publish")
+    public ResponseEntity<String> publish (@RequestBody Map<String, Object> payload) {
+        return new ResponseEntity<>("Publish", HttpStatus.OK);
+    }
+
+    @PostMapping("/stop")
+    public ResponseEntity<String> stop (@RequestBody Map<String, Object> payload) {
+        return new ResponseEntity<>("Stop", HttpStatus.OK);
+    }
+
     @PostMapping("/validate") 
     public ResponseEntity<String> validate (@RequestBody Map<String, Object> payload) {
         return new ResponseEntity<>("Validate", HttpStatus.OK);
