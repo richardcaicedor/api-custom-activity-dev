@@ -32,7 +32,7 @@ public class ActivityController {
     @PostMapping("/execute")
     public ResponseEntity<?> execute(@RequestBody String request) {
         try {
-            system.out.println("Hola Mundo");
+            System.out.println("Hola Mundo"); 
             ExecutePayload executePayload = convertPayloadToExecutePayload(request);
             return processRequest(executePayload);
         } catch (ValidationException ex) {
